@@ -156,6 +156,51 @@ body {
   opacity: 0.45;
 }
 
+/* estilo visual para feriados (roxo) */
+.day.feriado {
+  background: linear-gradient(180deg, rgba(107,91,154,0.18), rgba(107,91,154,0.12));
+  background-color: var(--purple) !important;
+  color: #ffffff;
+  border: none;
+}
+.day.feriado span {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* lista de feriados por mês (rodapé do cartão de mês) */
+.month-holidays {
+  margin-top: 10px;
+  border-top: 1px dashed rgba(15,23,42,0.06);
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.month-holidays-title {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+.holiday-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(107,91,154,0.12), rgba(107,91,154,0.08));
+  color: #2b1438;
+  font-size: 0.95rem;
+}
+.holiday-item::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background: var(--purple);
+  display: inline-block;
+}
+
 .day.alt-blue {
   background: linear-gradient(180deg, rgba(59, 130, 246, 0.12), rgba(59, 130, 246, 0.08));
   color: #022c64;
