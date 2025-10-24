@@ -36,7 +36,7 @@
     // weekdays
     const wk = document.createElement('div');
     wk.className = 'weekdays';
-    WEEKDAYS.forEach(w => {
+    WEEKDAYS.forEach((w) => {
       const el = document.createElement('div');
       el.className = 'weekday';
       el.textContent = w;
@@ -68,6 +68,10 @@
       const dt = new Date(year, monthIndex, d);
       const cell = document.createElement('div');
       cell.className = 'day';
+      // posição do dia na grade considerando os espaços iniciais
+      const position = startPad + (d - 1);
+      const weekRow = Math.floor(position / 7); // 0 = primeira semana exibida
+      if(weekRow % 2 === 0) cell.classList.add('alt-blue'); else cell.classList.add('alt-red');
       if(dt.toDateString() === today.toDateString()) cell.classList.add('today');
       const span = document.createElement('span');
       span.textContent = String(d);
